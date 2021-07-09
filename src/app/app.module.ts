@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ConversorModule } from './conversor/conversor.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { ConversorModule } from './conversor/conversor.module';
   ],
   imports: [
     BrowserModule,
-    ConversorModule
+    ConversorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
