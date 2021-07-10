@@ -20,7 +20,7 @@ export class ConversorComponent implements OnInit {
   possuiErro: boolean;
   conversaoResponse: ConversaoResponse; 
 
-  @ViewChild("conversaoForm", { static: true }) conversaoForm: NgForm;
+  @ViewChild("conversaoForm", { static: true }) conversaoForm: NgForm; //ligação do form com a atribuição de classe
 
   constructor(
     private moedaService: MoedaService,
@@ -33,13 +33,17 @@ export class ConversorComponent implements OnInit {
   }
 
   init() { //incializa o nosso código
-    this.conversao = new Conversao('USD', 'BRL', null);  //chama conversao, new Conversao 
+    this.conversao = new Conversao('EUR', 'USD', 100);  //chama conversao, new Conversao 
     this.possuiErro = false;
   }
 
   converter() {
     if (this.conversaoForm.form.valid) {
-      alert('Convertendo' + JSON.stringify(this.conversao))
+      this.conversorService
+      .converter(this.conversao)
+      .subscribe(response => this.conversaoResponse = response,
+        error => this.possuiErro = true
+        );
     }
   }
 }

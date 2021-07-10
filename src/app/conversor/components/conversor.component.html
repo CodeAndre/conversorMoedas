@@ -19,6 +19,7 @@
                 class="form-control text-right formulario"
                 placeholder="0"
                 [(ngModel)]="conversao.valor"
+                numero
                 required />
 
             <select 
@@ -48,11 +49,12 @@
             <input 
                 type="submit"
                 value="Converter"
-                class="btn btn-success"
+                class="btn btn-success botao"
                 data-toggle="modal"
                 data-target="#modalCotacao"
                 (click)="converter()"
                 [disabled]="!conversaoForm.form.valid"> <!--[]-> operador de atribuição que irá se conectar com o componente, e só estará habilitado quando o form for valido-->
+                {{conversaoResponse | json}}
         </form>
     </div>
 </div>

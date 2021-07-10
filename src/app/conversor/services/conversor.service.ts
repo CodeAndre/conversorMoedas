@@ -17,7 +17,8 @@ export class ConversorService {
   converter(conversao: Conversao): Observable<any> { //<any> contém o retorno da requisição extena
 
   let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
-    return this.http.get(this.BASE_URL + params);  
+    return this.http
+    .get(this.BASE_URL + params);  
   }
  
 
