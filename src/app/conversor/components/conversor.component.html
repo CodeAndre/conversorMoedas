@@ -29,7 +29,7 @@
                 required>
                 <option 
                     *ngFor="let moeda of moedas"
-                    value="moeda.sigla">
+                    [value]="moeda.sigla">
                     {{moeda.sigla}} - {{moeda.descricao}} <!--Vai ter a sigla e a descrição da moeda lá no params-->
                 </option>
             </select>
@@ -42,7 +42,7 @@
                 [(ngModel)]="conversao.moedaPara"
                 required>
                 <option *ngFor="let moeda of moedas"
-                value="moeda.sigla">
+                [value]="moeda.sigla">
                 {{moeda.sigla}} - {{moeda.descricao}}
                 </option>
             </select>
