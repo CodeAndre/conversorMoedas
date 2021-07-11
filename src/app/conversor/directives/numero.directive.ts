@@ -10,18 +10,18 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
     multi: true
   }]
 })
-export class NumeroDirective {
+export class NumeroDirective implements ControlValueAccessor {
 
   onTouched: any;
   onChange: any;
 
   constructor(private el: ElementRef) { }
 
-  @HostListener('keyup', ['$event'])
+  @HostListener('keyup', ['$event']) //escutar o evento quando a tecla é pressionada 
 
   onKeyUp($event: any) {
 
-    let valor = $event.target.value;
+    let valor = $event.target.value; // o valor assim que a tecla é acionada
     let posiDeci = valor.indexOf('.');
 
     valor = valor.replace(/[\D]/g, ''); //tudo que não é numero será removido
@@ -30,8 +30,8 @@ export class NumeroDirective {
       valor = valor.substr(0, posiDeci) + '.' + valor.substr(posiDeci); //valor 0 da posiDeci + . + o valor em si, que seria os centavos
     }
 
-    $event.target.value = valor;
-    this.onChange(valor);
+    $event.target.value = valor; //o valor já atulizado sem letras
+    this.onChange(valor); // essa funçao atualiza o model, com o input corretamente sem letras
   }
 
   //Registra função a ser chamada para atualizar o valor no model

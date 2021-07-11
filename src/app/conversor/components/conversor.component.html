@@ -54,7 +54,6 @@
                 data-target="#modalCotacao"
                 (click)="converter()"
                 [disabled]="!conversaoForm.form.valid"> <!--[]-> operador de atribuição que irá se conectar com o componente, e só estará habilitado quando o form for valido-->
-                {{conversaoResponse | json}}
         </form>
     </div>
 </div>
