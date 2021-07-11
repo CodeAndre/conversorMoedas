@@ -7,7 +7,7 @@ import { ConversorComponent } from './components/conversor.component';
 import { MoedaService } from './services/moeda.service';
 import { ConversorService } from './services/conversor.service';
 import { NumeroDirective } from './directives/numero.directive';
-import { ModalCotacaoComponent } from './modal-cotacao/modal-cotacao.component';
+import { ModalCotacaoComponent } from './utils/modal-cotacao.component';
 
 
 

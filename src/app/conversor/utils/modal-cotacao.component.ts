@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-modal-cotacao',
+  selector: 'modal-cotacao',
   templateUrl: './modal-cotacao.component.html',
   styleUrls: ['./modal-cotacao.component.css']
 })
