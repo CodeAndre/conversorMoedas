@@ -8,6 +8,7 @@ import { MoedaService } from './services/moeda.service';
 import { ConversorService } from './services/conversor.service';
 import { NumeroDirective } from './directives/numero.directive';
 import { ModalCotacaoComponent } from './utils/modal-cotacao.component';
+import { DataBrPipe } from './pipes/data-br.pipe';
 
 
 
@@ -15,7 +16,8 @@ import { ModalCotacaoComponent } from './utils/modal-cotacao.component';
   declarations: [
     ConversorComponent,
     NumeroDirective,
-    ModalCotacaoComponent
+    ModalCotacaoComponent,
+    DataBrPipe
   ],
   imports: [
     CommonModule,
