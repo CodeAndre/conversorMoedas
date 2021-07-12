@@ -27,7 +27,7 @@ export class ConversorService {
   if (conversaoResponse === undefined) { //se n haver nada em ConversaoResponse retorna 0
   return 0;
   }
-  return conversaoResponse.rate[conversao.moedaPara]; //retorna a conversão para a moeda em pesquisa
+  return conversaoResponse.rates[conversao.moedaPara]; //retorna a conversão para a moeda em pesquisa
   }
 
   cotacaoDe(conversaoResponse: ConversaoResponse, 
@@ -35,7 +35,7 @@ export class ConversorService {
   if (conversaoResponse === undefined) {
   return '0';
   }
-  return (1 / conversaoResponse.rate[conversao.moedaPara]) //sempre retorna em base 1
+  return (1 / conversaoResponse.rates[conversao.moedaPara]) //sempre retorna em base 1
   .toFixed(4);// limitar o numero de casa decimais
   }
  

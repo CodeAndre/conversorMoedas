@@ -33,7 +33,7 @@ export class ConversorComponent implements OnInit {
   }
 
   init() { //incializa o nosso código
-    this.conversao = new Conversao('EUR', 'USD', null);  //chama conversao, new Conversao 
+    this.conversao = new Conversao('EUR', 'BRL', null);  //chama conversao, new Conversao 
     this.possuiErro = false;
   }
 

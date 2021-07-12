@@ -56,4 +56,10 @@
                 [disabled]="!conversaoForm.form.valid"> <!--[]-> operador de atribuição que irá se conectar com o componente, e só estará habilitado quando o form for valido-->
         </form>
     </div>
+    <modal-cotacao
+        [id]="'modalCotacao'"
+        [conversaoResponse] = "conversaoResponse"
+        [conversao] = "conversao"
+        (onConfirm) = "init()">
+    </modal-cotacao>
 </div>
